@@ -15,7 +15,7 @@ from dhooks import Webhook, Embed
 from plyer import notification
 
 sound = False
-profit = 100000 # change this to how much minimun money in profit you want, ONLY FOR WEBHOOK
+profit = 10000000 # change this to how much minimun money in profit you want, ONLY FOR WEBHOOK
 
 c = requests.get("https://api.hypixel.net/skyblock/auctions?page=0")
 resp = c.json()
@@ -26,7 +26,7 @@ results = []
 prices = {}
 
 # stuff to remove
-REFORGES = [" ✦", "⚚ ", " ✪", "✪", "Stiff ", "Lucky ", "Jerry's ", "Dirty ", "Fabled ", "Suspicious ", "Gilded ", "Warped ", "Withered ", "Bulky ", "Stellar ", "Heated ", "Ambered ", "Fruitful ", "Magnetic ", "Fleet ", "Mithraic ", "Auspicious ", "Refined ", "Headstrong ", "Precise ", "Spiritual ", "Moil ", "Blessed ", "Toil ", "Bountiful ", "Candied ", "Submerged ", "Reinforced ", "Cubic ", "Warped ", "Undead ", "Ridiculous ", "Necrotic ", "Spiked ", "Jaded ", "Loving ", "Perfect ", "Renowned ", "Giant ", "Empowered ", "Ancient ", "Sweet ", "Silky ", "Bloody ", "Shaded ", "Gentle ", "Odd ", "Fast ", "Fair ", "Epic ", "Sharp ", "Heroic ", "Spicy ", "Legendary ", "Deadly ", "Fine ", "Grand ", "Hasty ", "Neat ", "Rapid ", "Unreal ", "Awkward ", "Rich ", "Clean ", "Fierce ", "Heavy ", "Light ", "Mythic ", "Pure ", "Smart ", "Titanic ", "Wise ", "Bizarre ", "Itchy ", "Ominous ", "Pleasant ", "Pretty ", "Shiny ", "Simple ", "Strange ", "Vivid ", "Godly ", "Demonic ", "Forceful ", "Hurtful ", "Keen ", "Strong ", "Superior ", "Unpleasant ", "Zealous "]
+REFORGES = []
 
 # Constant for the lowest priced item you want to be shown to you; feel free to change this
 LOWEST_PRICE = 5
@@ -124,12 +124,10 @@ def main():
             if op: winsound.Beep(500, 500) # emits a frequency 500hz, for 500ms
         for result in results:
 
-            myself = 'https://discord.com/api/webhooks/aWebhookUrl'
-            myfavoriteperson = 'https://discord.com/api/webhooks/aWebhookUrl'
-            myfriend3 = 'https://discord.com/api/webhooks/aWebhookUrl'
+            myself = 'https://discord.com/api/webhooks/925021265587241011/U8RP6aP9YvCGt9sA95SBSnq4idtFJUkPW5XfUPl5-b4nNl3t-6xRJvF0YRqE8JFc15-z'
 
             if result[1] - result[0][2] >= profit:
-                for x in [myself, myfavoriteperson, myfriend3]:
+                for x in [myself]:
                     hook = Webhook(x)
                     profitz = result[1] - result[0][2] 
                     embed = Embed(
