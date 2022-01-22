@@ -7,7 +7,6 @@ from concurrent.futures import ThreadPoolExecutor
 from timeit import default_timer
 import time
 
-import pandas as pd
 import requests
 
 from dhooks import Webhook, Embed
@@ -116,7 +115,6 @@ def main():
             )
         
         df=pd.DataFrame(['/viewauction ' + str(max(results, key=lambda entry:entry[1])[0][0])])
-        df.to_clipboard(index=False,header=False) # copies most valuable auction to clipboard (usually just the only auction cuz very uncommon for there to be multiple
     
         done = default_timer() - START_TIME
 
