@@ -114,7 +114,6 @@ def main():
                 timeout = 4,
             )
         
-        df=pd.DataFrame(['/viewauction ' + str(max(results, key=lambda entry:entry[1])[0][0])])
     
         done = default_timer() - START_TIME
 
